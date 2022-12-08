@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/*.py[cod]
+../*$py.class
+
+# IPython Notebook
+**/.ipynb_checkpoints/**
+*.ipynb
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+.env
+
+# virtualenv
+.venv/
+venv/
+ENV/
+
+# VSCode
+.vscode/**
+
+# .DS_Store
+**/.DS_Store
+
+# Unnecessary files 
+*.png
+*.csv
+*.Rmd
+*.prof
+*.html
+*.RData
+*.Rhistory
+
+# Compressed files
+*.tar
+*.tar.gz
+
+# --END--
+
