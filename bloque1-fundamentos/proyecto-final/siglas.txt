@@ -1,0 +1,47 @@
+ACB Asociacion de Clubes de Baloncesto.
+ACNUR Alto Comisionado de las Naciones Unidas para los Refugiados.
+ADN acido desoxirribonucleico.
+ADENA Asociacion para la Defensa de la Naturaleza.
+AMPA Asociacion de Madres y Padres de Alumnos.
+API Asociacion de la Prensa Internacional.
+ATS Ayudantes Tecnico Sanitarios.
+BOE Boletin Oficial del Estado.
+CIF Codigo de Identificacion fiscal.
+CNT Confederacion Nacional del Trabajo.
+COI Comite Olimpico Internacional.
+CSIC Consejo Superior de Investigaciones Cientificas.
+DGT Direccion General de Trafico.
+DNI Documento Nacional de Identidad.
+ESO Educacion Secundaria Obligatoria.
+FEDER Fondo Europeo de Desarrollo Regional.
+FIB Festival Internacional de Benicasim.
+FIBA Federacion Internacional de Baloncesto Amateur.
+FIFA Federacion Internacional de Futbol Asociacion.
+FMI Fondo Monetario Internacional.
+FP Formacion Profesional.
+GEO Grupos Especiales de Operaciones.
+GTI Gran Turismo Inyeccion.
+ICO Instituto de Credito Oficial.
+IFEMA Instituto Ferial de Madrid.
+INSERSO Instituto Nacional de Servicios Sociales.
+IPC Indice de Precios al Consumo.
+ITV Inspeccion Tecnica de Vehiculos.
+LOGSE Ley Ordenacion General del Sistema Educativo.
+MIR medico interno y residente.
+OIT Organizacion Internacional del Trabajo.
+ONU Organizacion de las Naciones Unidas.
+OMS Organizacion Mundial de la Salud.
+OPEP Organizacion de los Paises Exportadores de Petroleo.
+OTAN Organizacion del Tratado del Atlantico Norte.
+OVNI Objeto Volador No Identificado.
+PIB Productor Interior Bruto.
+PRISA Promotora de Informaciones Sociedad Anonima.
+PVC Cloruro de polivinilo.
+RDSI Red Digital de Servicios Integrados.
+SAI Sistema de Alimentacion Ininterrumpida.
+SGAE Sociedad General de Autores y Editores.
+SIDA Sindrome de Inmunodeficiencia Adquirida.
+TDT Television Digital Terrestre.
+TNT trinitrotolueno.
+UCM Universidad Complutense de Madrid.
+UVI Unidad de Vigilancia Intensiva.
