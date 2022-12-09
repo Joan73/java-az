@@ -5,19 +5,21 @@ package fundamentos.lenguajejava.ficheros.proyecto;
  *
  * @author joanpont
  */
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.FileReader;
-import java.util.InputMismatchException;
+import java.io.IOException;
 
 
 public class Siglas {
     
     static boolean finSiglas, finFichero = false;
     
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args){
         // Declaraciones
-        Scanner sc;
+        Scanner sc = new Scanner(System.in);
         boolean flag = false;
         
         while(!flag){
@@ -28,22 +30,25 @@ public class Siglas {
             //Leer opción escogida por el usuario
             int opcion = 0;
             try{
-                sc = new Scanner(System.in);
-                opcion = sc.nextInt();
-            }catch(InputMismatchException error){
+                opcion = Integer.parseInt(sc.nextLine());
+            }catch(NumberFormatException e){
                 System.out.println("LA OPCIÓN DEBE SER UN NÚMERO ENTRE 1 Y 2.");
             }
             
             // Actuar según la decisión del usuario
             
             switch(opcion){
-                case 0: break;
-                case 1: procesar();
-                        break;
-                case 2: System.out.println("HAS ESCOGIDO LA OPCIÓN DE SALIDA. HASTALUEGO.");
-                        flag = true;
-                        break;
-                default: System.out.println("OPCIÓN ELEGIDA INCORRECTA");
+                case 0 ->{}
+                case 1 -> {
+                    try{
+                        procesar();
+                    }catch(IOException e){
+                        System.out.println("ERROR DE PROCESAMIENTO: "+e.getMessage());
+                    }
+                }
+                case 2 -> {System.out.println("HAS ESCOGIDO LA OPCIÓN DE SALIDA. HASTALUEGO.");
+                           flag = true;}
+                default -> System.out.println("OPCIÓN ELEGIDA INCORRECTA");
             }
                     
         }
@@ -57,26 +62,33 @@ public class Siglas {
         System.out.print("INTRODUCE LA OPCIÓN ELEGIDA: ");
     }
     
-    public static void procesar() throws Exception{
+    public static void procesar() throws IOException{
         // Declaraciones
         Scanner sc = new Scanner(System.in);
         FileReader entrada;
         FileWriter salida;
         
-        // Leer nombre del archivo
+        // Leemos y parseamos nombre del archivo
         System.out.print("INTRODUZCA EL NOMBRE DEL ARCHIVO: ");
         String nombre = sc.nextLine();
-        
         while(verificarNombre(nombre)==false){
             System.out.println("LOS CARACTERES ',', ';', ':' Y '/' ESTÁN PROHIBIDOS Y LA EXTENSIÓN DEBE SER .TXT");
             System.out.print("INTRODUZCA EL NOMBRE DEL ARCHIVO: ");
             nombre = sc.nextLine();
         }
-        String nombreCompleto = obtenerNombreSinExtension(nombre);
+        String nombreFichero = obtenerNombreSinExtension(nombre);
+
+        // Intentamos abrir el fichero
+        try{
+            entrada = new FileReader(nombreFichero+".txt");
+        }catch(FileNotFoundException e){
+            throw new FileNotFoundException("EL FICHERO "+nombreFichero+" NO ESTÁ DISPONIBLE.");
+        }
         
-        // Instanciar
-        entrada = new FileReader(nombreCompleto+".txt");
-        salida = new FileWriter(nombreCompleto+"PR.txt");
+        
+        // Fichero de salida
+        salida = new FileWriter(nombreFichero+"PR.txt");
+        
         
         // Procesado
         while(!finFichero){
@@ -108,6 +120,7 @@ public class Siglas {
                 if(!encontrada){
                     salida.write(palabra+" ");
                 }
+                
                 // Cerramos el fichero de siglas
                 siglas.close();
                 finSiglas = false;
@@ -115,8 +128,11 @@ public class Siglas {
                 salida.write(palabra+" ");
             }
         }
+        
+        // Cerramos los ficheros
         entrada.close();
         salida.close();
+        
     }
     
     public static boolean verificarNombre(String nombre){
@@ -156,7 +172,7 @@ public class Siglas {
         return nombreSinExtension;
     }
     
-    public static String lecturaPalabra(FileReader fichero, boolean siglas) throws Exception{
+    public static String lecturaPalabra(FileReader fichero, boolean siglas) throws IOException{
         
         // Declaraciones
         final int FINAL_SECUENCIA = -1;
@@ -189,7 +205,7 @@ public class Siglas {
         return palabra;
     }
     
-    public static String lecturaCentinela(FileReader fichero, char centinela) throws Exception{
+    public static String lecturaCentinela(FileReader fichero, char centinela) throws IOException{
         
         // Declaraciones
         final int FINAL_SECUENCIA = -1;
