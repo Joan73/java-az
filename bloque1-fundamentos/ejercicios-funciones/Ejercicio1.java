@@ -10,6 +10,11 @@ import java.util.Scanner;
  * de Strings con dos valores: 
  *  - La palabra que se acaba de leer 
  *  - El índice de la secuencia en el que hemos encontrado el final de la palabra.
+ * 
+ * Esta función nos servirá para leer secuencialmente (en cada invocación se 
+ * leerá una palabra de la secuencia) todas las palabras de la secuencia 
+ * introducida por teclado.
+ * 
  * PISTA: En el método main, cuando invoquemos a la función 'lecturaPalabras' 
  * deberemos realizar un casteo (transformación) del índice (que es un String) a 
  * un tipo de dato entero. Podemos realizar el casteo con la función parseInt(<cadena>) 
